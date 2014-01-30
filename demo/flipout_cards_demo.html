@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Flip Out Cards by Pete R. | The Pete Design</title>
+	<meta name="title" content="jQuery Flip Out Cards by Pete R. | The Pete Design" />
+	<meta name="description" content="Create a Multi Level Flip Out Cards with FlipOut_Cards.js" />
+	<link rel="image_src" href="/images/flipout_cards_image.png" />
+
+	<meta content="http://www.thepetedesign.com/demos/flipout_cards_demo.html" property="og:url" />
+	<meta content="http://www.thepetedesign.com/images/flipout_cards_image.png" property="og:image" />
+	<link rel="shortcut icon" id="favicon" href="favicon.png"> 
+	<meta name="author" content="Pete R.">
+	<link rel="canonical" href="http://www.thepetedesign.com/demos/flipout_cards_demo.html" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='flipout_cards.css' rel='stylesheet' type='text/css'>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="jquery.flipout_cards.js"></script>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: #F1f1f2;
+      padding: 0;
+      text-align: center;
+      font-family: 'open sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+    }
+    
+    .wrapper {
+    	height: auto !important;
+    	height: 100%;
+    	margin: 0 auto; 
+    	overflow: hidden;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    
+    
+    h1, h2 {
+      width: 100%;
+      float: left;
+    }
+    h1 {
+      margin-top: 100px;
+      color: #999;
+      margin-bottom: 5px;
+      font-size: 70px;
+      font-weight: 100;
+    }
+    h2 {
+      padding: 00px 20px 30px 20px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      letter-spacing: 0px;
+      color: #888;
+      font-size: 20px;
+      line-height: 160%;
+      font-weight: 100;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    
+    
+    .pointer {
+      color: #00B0FF;
+      font-family: 'Pacifico';
+      font-size: 24px;
+      margin-top: 15px;
+      position: absolute;
+      top: 130px;
+      right: -40px;
+    }
+    .pointer2 {
+      color: #00B0FF;
+      font-family: 'Pacifico';
+      font-size: 24px;
+      margin-top: 15px;
+      position: absolute;
+      top: 130px;
+      left: -40px;
+    }
+    pre {
+      margin: 80px auto;
+    }
+    pre code {
+      padding: 35px;
+      border-radius: 5px;
+      font-size: 15px;
+      background: rgba(0,0,0,0.1);
+      border: rgba(0,0,0,0.05) 5px solid;
+      max-width: 500px;
+    }
+
+
+    .main {
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    
+    .main h1 {
+      padding:20px 50px 10px;
+      float: left;
+      width: 100%;
+      font-size: 60px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      font-weight: 100;
+      margin: 0;
+      padding-top: 55px;
+      font-family: 'Open Sans';
+      letter-spacing: -1px;
+      text-transform: capitalize;
+    }
+   
+    .main h1.demo1 {
+      background: #1ABC9C;
+    }
+    
+    .reload.bell {
+      font-size: 12px;
+      padding: 20px;
+      width: 45px;
+      text-align: center;
+      height: 47px;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+    }
+    
+    .reload.bell #notification {
+      font-size: 25px;
+      line-height: 140%;
+    }
+    
+    .reload, .btn{
+      display: inline-block;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      display: inline-block;
+      line-height: 100%;
+      padding: 0.7em;
+      text-decoration: none;
+      width: 100px;
+      line-height: 140%;
+      font-size: 17px;
+      font-family: Open Sans;
+      font-weight: bold;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: #4D90FE;
+      background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+      background-image: linear-gradient(top,#4d90fe,#4787ed);
+      border: 1px solid #3079ED;
+      color: #FFF;
+    }
+    .reload:hover{
+      background: #317af2;
+    }
+    .btn {
+      width: 200px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: #4D90FE;
+      background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+      background-image: linear-gradient(top,#4d90fe,#4787ed);
+      border: 1px solid #3079ED;
+      color: #FFF;
+    }
+    .clear {
+      width: auto;
+    }
+    .btn:hover, .btn:hover {
+      background: #317af2;
+    }
+    .btns {
+      float: left;
+      width: 100%;
+      margin: 50px auto;
+    }
+    .credit {
+      text-align: center;
+      color: #888;
+      padding: 10px 10px;
+      margin: 0 0 0 0;
+      background: #f5f5f5;
+      float: left;
+      width: 100%;
+    }
+    .credit a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+    
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: block;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background:#f5f5f5;
+      font-weight: bold;
+      font-size: 13px;
+      color: #888;
+      -webkit-transition: all 200ms ease-out;
+      -moz-transition: all 200ms ease-out;
+      -o-transition: all 200ms ease-out;
+      transition: all 200ms ease-out;
+    }
+    .back:hover {
+      background: #eee;
+    }
+    
+    .page-container {
+      float: left;
+      width: 100%;
+      margin: 0 auto 300px;
+      position: relative;
+    }
+    
+    .flipout {
+      text-align: center;
+    }
+    .foc-main {
+      display: inline-block;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+    }
+    .foc-card {
+      background: #f8f8f8;
+      border-left: 1px solid #eee;
+    }
+    .foc-main p{
+      margin: 0;
+      color: #77BEFF;
+      font-size: 100px;
+      line-height: 140%;
+      font-weight: 100;
+    }
+    .foc-card p{
+      color: #CCC;
+      margin-top: 75px;
+      margin-bottom: 50px;
+      font-size: 50px;
+      line-height: 140%;
+      font-weight: 100;
+    } 
+    .foc-main .foc-card small{
+      font-size: 18px;
+    }
+    .foc-main small {
+      display: block;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #EEE;
+      color: #777;
+      font-size: 24px;
+      font-style: italic;
+      font-family: georgia;
+      line-height: 140%;
+      font-weight: 100;
+    }
+    .foc-main .foc-card.foc-bottom p{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .foc-main .foc-card.foc-bottom small{
+      border-top: 1px solid #ddd;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+	</style>
+	<script>
+	  $(document).ready( function() {
+	     $(document).ready( function() {
+    	    $(".flipout").flipout_cards();
+    	  });
+	  });
+		
+	</script>
+</head>
+<body>
+  <div class="wrapper">
+	  <div class="main">
+	    <div class="header">
+        <h1>jQuery Flipping Gallery</h1>
+        <h2>Create a Dynamic Multi Level Flip Out Cards</h2>
+        <p class="credit">Created by <a href="http://www.thepetedesign.com">Pete R.</a>, Founder of <a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></p>
+        <div class="btns">
+  	      <a class="reload btn" href="https://github.com/peachananr/flipping_gallery">Download on Github</a>
+  	    </div>
+  	  </div>
+  	  
+      <div class="page-container">
+        <div class="flipout">
+          <div class="foc-main">
+            <p>22&#176;C</p>
+            <small>It's Pretty Hot</small>
+            <small>Hover to see more</small>
+          </div>
+          <div class="foc-left">
+           <p>40&#176;C</p>
+           <small>Tomorrow is even worse.</small>
+          </div>
+          <div class="foc-left">
+           <p>46&#176;C</p>
+           <small>The next is even worse.</small>
+          </div>
+          <div class="foc-right">
+           <p>46&#176;C</p>
+           <small>The next is even worse.</small>
+          </div>
+          <div class="foc-right">
+           <p>50&#176;C</p>
+           <small>Don't go out.</small>
+          </div>
+          <div class="foc-bottom">
+           <p>50&#176;C</p>
+           <small>Don't go out.</small>
+          </div>
+          <div class="foc-bottom">
+           <p>50&#176;C</p>
+           <small>Don't go out.</small>
+          </div>
+        </div>
+    </div>
+    <a class="back" href="http://www.thepetedesign.com/#design">Back to The Pete Design</a>
+    <a href="https://github.com/peachananr/flipout_cards"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 15;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  </div>
+</body>
+</html>
