@@ -73,7 +73,8 @@
           animation = false,
           width = 0,
           height = 0,
-          extraclass = "";
+          extraclass = "",
+          el = $(this);
       
       switch (settings.animation) { 
         case 'slideOut':
