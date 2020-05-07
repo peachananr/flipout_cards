@@ -2,10 +2,9 @@
 Create a Dynamic Multi Level Flip Out Cards
 Created by [Pete R.](http://www.thepetedesign.com), Founder of [Travelistly](http://www.Travelistly.com) and [BucketListly](http://www.bucketlistly.com)
 
-[![Flip Out Cards](http://www.thepetedesign.com/images/flipout_cards_image.png "Flip Out Cards")](http://www.thepetedesign.com/demos/flipout_cards_demo.html)
 
 ## Demo
-[View demo](http://www.thepetedesign.com/demos/flipout_cards_demo.html)
+[View demo](http://peachananr.github.io/flipout_cards/demo/flipout_cards_demo.html)
 
 ## Compatibility
 Modern browsers such as Chrome, Firefox, and Safari on both desktop and smartphones have been tested. I have not tested this on IE.
