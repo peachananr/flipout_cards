@@ -73,7 +73,8 @@
           animation = false,
           width = 0,
           height = 0,
-          extraclass = "";
+          extraclass = "",
+          el = $(this);
       
       switch (settings.animation) { 
         case 'slideOut':
@@ -94,7 +95,7 @@
         left += "<div class='foc-card foc-left " + extraclass + "'>" + new_el.html() + "</div>";
       });
       
-      if (left != "")  $("<div style='width:" + width + "px;' class='foc-left-wrapper foc-wrapper'>" + left + "</div>").appendTo(".foc-main");
+      if (left != "")  $("<div style='width:" + width + "px;' class='foc-left-wrapper foc-wrapper'>" + left + "</div>").appendTo(el.find(".foc-main"));
       width = 0;
       
       el.find(".foc-right").each(function (index) {
@@ -105,7 +106,7 @@
         right += "<div class='foc-card foc-right " + extraclass + "'>" + new_el.html() + "</div>";
       });
       
-      if (right != "") $("<div style='width:" + width + "px;' class='foc-right-wrapper foc-wrapper'>" + right + "</div>").appendTo(".foc-main");
+      if (right != "") $("<div style='width:" + width + "px;' class='foc-right-wrapper foc-wrapper'>" + right + "</div>").appendTo(el.find(".foc-main"));
       
       $(el.find(".foc-top").get().reverse()).each(function (index) {
         var el2 = $(this);
@@ -115,7 +116,7 @@
         top = "<div class='foc-card foc-top " + extraclass + " " + oddOrEven(index+1) + "'>" + new_el.html() + "</div>" + top;
       });
       
-       if (top != "") $("<div style='height:" + height + "px;' class='foc-top-wrapper foc-wrapper'>" + top + "</div>").appendTo(".foc-main");
+       if (top != "") $("<div style='height:" + height + "px;' class='foc-top-wrapper foc-wrapper'>" + top + "</div>").appendTo(el.find(".foc-main"));
       
       height = 0;
       
@@ -127,7 +128,7 @@
         bottom += "<div class='foc-card foc-bottom " + extraclass + "'>" + new_el.html() + "</div>";
       });
      
-      if (bottom != "") $("<div style='height:" + height + "px;' class='foc-bottom-wrapper foc-wrapper'>" + bottom + "</div>").appendTo(".foc-main");
+      if (bottom != "") $("<div style='height:" + height + "px;' class='foc-bottom-wrapper foc-wrapper'>" + bottom + "</div>").appendTo(el.find(".foc-main"));
       
       el.hover( function() {
         if (typeof settings.beforeOpen == 'function') settings.beforeOpen();
